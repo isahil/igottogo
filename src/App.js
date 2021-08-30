@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api"
 import mapStyles from './mapStyles';
-//const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env
+const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env
 
 const libraries = ["places"];
 
@@ -23,7 +23,7 @@ const options = {
 }
 export default function App() {
   const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: "AIzaSyDmdItnLUezNk3Y9D34iN3VMTP3Sdp5xkg", //linux not reading the process.env values?
+    googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY, //linux not reading the process.env values?
     libraries
   });
 
